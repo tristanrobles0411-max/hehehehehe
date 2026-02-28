@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Emotion Check</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            transition: background 0.5s ease;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin: 8px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: transform 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+        #result {
+            margin-top: 30px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>How Are You Feeling Today?</h1>
+
+    <div class="buttons">
+        <button onclick="setEmotion('happy')">😊 Happy</button>
+        <button onclick="setEmotion('sad')">😢 Sad</button>
+        <button onclick="setEmotion('angry')">😡 Angry</button>
+        <button onclick="setEmotion('excited')">🤩 Excited</button>
+        <button onclick="setEmotion('tired')">😴 Tired</button>
+        <button onclick="setEmotion('anxious')">😰 Anxious</button>
+    </div>
+
+    <div id="result"></div>
+
+    <script>
+        function setEmotion(emotion) {
+            let message = "";
+            let color = "";
+
+            if (emotion === "happy") {
+                message = "That's great! Keep smiling and spread positivity!";
+                color = "#ffe066";
+            } 
+            else if (emotion === "sad") {
+                message = "It's okay to feel sad. Better days are coming.";
+                color = "#a2d2ff";
+            } 
+            else if (emotion === "angry") {
+                message = "Take a deep breath. Calmness brings clarity.";
+                color = "#ff6b6b";
+            } 
+            else if (emotion === "excited") {
+                message = "Awesome! Use that energy wisely!";
+                color = "#c77dff";
+            } 
+            else if (emotion === "tired") {
+                message = "Rest is important. Take care of yourself.";
+                color = "#bdb2ff";
+            } 
+            else if (emotion === "anxious") {
+                message = "Slow down. You are safe and capable.";
+                color = "#90dbf4";
+            }
+
+            document.body.style.backgroundColor = color;
+            document.getElementById("result").innerText = message;
+        }
+    </script>
+
+</body>
+</html>
